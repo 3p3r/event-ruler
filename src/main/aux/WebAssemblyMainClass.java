@@ -1,13 +1,16 @@
 package aux;
 
-import software.amazon.event.ruler.Patterns;
-import software.amazon.event.ruler.ValuePatterns;
+import de.mirkosertic.bytecoder.api.Export;
+import software.amazon.event.ruler.Ruler;
 
 @SuppressWarnings({"HideUtilityClassConstructor"})
 public class WebAssemblyMainClass {
   public static void main(String[] args) {
-    ValuePatterns cut = Patterns.exactMatch("foo");
-    System.out.println(cut.pattern());
-    System.out.println("Hello World!");
+    // no-op, needed by ByteCoder so it can find the main method
+  }
+
+  @Export("matchesRule")
+  public static boolean matchesRule(String event, String rule) throws Exception {
+    return Ruler.matchesRule(event, rule);
   }
 }

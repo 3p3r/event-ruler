@@ -98,6 +98,12 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>de.mirkosertic.bytecoder</groupId>
+      <artifactId>bytecoder.api</artifactId>
+      <version>2021-11-02</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -112,7 +118,7 @@
         <configuration>
           <mainClass>aux.WebAssemblyMainClass</mainClass>
           <backend>wasm</backend>
-          <enableExceptionHandling>false</enableExceptionHandling>
+          <enableExceptionHandling>true</enableExceptionHandling>
           <optimizationLevel>ALL</optimizationLevel>
         </configuration>
         <executions>
